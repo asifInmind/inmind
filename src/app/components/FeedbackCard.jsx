@@ -18,7 +18,7 @@ export default function FeedbackCard({ message, image, title, address }) {
             alt="client image"
             width={50}
             height={50}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover w-auto h-auto"
           />
         </div>
         <div>

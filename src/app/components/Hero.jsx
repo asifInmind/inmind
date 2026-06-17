@@ -23,7 +23,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[url('/images/herobg.png')] w-full h-185 bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col">
+    // FIXED: Combined the linear gradient overlay with your original background image URL
+    <section className="bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/herobg.png')] w-full h-185 bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col">
       <motion.div
         className="w-216.75 h-94.5 text-center"
         variants={containerVariants}

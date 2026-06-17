@@ -14,7 +14,6 @@ export default function NotFound() {
     },
   };
 
-  // Upward text slide
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {

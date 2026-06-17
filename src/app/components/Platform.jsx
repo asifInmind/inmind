@@ -64,9 +64,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"Unified Courier Portal"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "All couriers in one place — TCS, Leopards, Trax, Swyft, BlueEX and more."
               }
               cardWidth="400px"
               cardHeight="489px"
@@ -86,9 +86,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"Accounts Receivable"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Know exactly what every courier owes you, down to the shipment level."
               }
               cardWidth="400px"
               cardHeight="489px"
@@ -104,9 +104,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"WhatsApp Automation"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Order updates, attempt follow-ups, delivery alerts — fully automated."
               }
               cardWidth="400px"
               cardHeight="489px"
@@ -122,9 +122,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"AI Automations"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Smart triggers and intelligent workflows without extra tools or subscriptions."
               }
               cardWidth="400px"
               cardHeight="489px"
@@ -144,9 +144,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"COD Reconciliation"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Never get underpaid by a courier again. Full remittance tracking."
               }
               cardWidth="611px"
               cardHeight="489px"
@@ -162,9 +162,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"Analytics Dashboard"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Real-time ops visibility across orders, returns, couriers, and revenue."
               }
               cardWidth="611px"
               cardHeight="489px"
@@ -183,9 +183,9 @@ export default function Platform() {
             transition={transition}
           >
             <Card
-              title={"Attempt Management"}
+              title={"Multi-Team Access"}
               description={
-                "Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
+                "Roles and permissions for your entire operations team."
               }
               cardWidth="1240px"
               cardHeight="489px"

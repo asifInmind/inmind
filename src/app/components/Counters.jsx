@@ -20,8 +20,6 @@ function AnimatedCounter({
     formatter(Math.floor(latest)),
   );
 
-  // This line controls the scroll trigger.
-  // It waits until the element is 100px into the viewport before starting.
   const isInView = useInView(nodeRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
@@ -37,7 +35,7 @@ function AnimatedCounter({
 export default function Counters() {
   return (
     <>
-      <section className="flex justify-center items-center">
+      <section className="flex flex-col md:flex-row md:justify-center md:items-center">
         <div className="w-90 h-50 py-4 px-8 flex justify-center items-start bg-[#161326] flex-col border border-r-[#4B4763]">
           <h1 className=" leading-[100%] text-[#328476] font-bold text-[50px]">
             <AnimatedCounter
