@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-import {  Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
 export const metadata: Metadata = {
   title: "inmind",
   description: "A platform for Order management system OMS",
 };
+
+const satoshi = localFont({
+  src: "./fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -19,14 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistMono.variable} }  antialiased`}
-    >
-      <body>
+    // Fixed: Removed the stray "}" from the template literal below
+    <html lang="en" className={`${satoshi.variable} antialiased`}>
+      <body className="font-satoshi">
         <Header />
         {children}
-        
       </body>
     </html>
   );

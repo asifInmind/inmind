@@ -4,126 +4,62 @@ import SetupProcedure from "./components/SetupProcedure";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Platform from "./components/Platform";
-
+import Carousel from "./components/Carousel";
 import Counters from "./components/Counters";
 import BookingOffer from "./components/BookingOffer";
 import PrimaryBanner from "./components/PrimaryBanner";
 export default function Home() {
-  // const steps = [
-  //   {
-  //     stepNumber: 1,
-  //     // eyebrow: "Unified Courier Management",
-  //     heading: (
-  //       <>Returns are killing your margins. Most of them were avoidable.</>
-  //     ),
-  //     paragraphs: [
-  //       "TCS. Leopards. Trax. Swyft. BlueEX. Your team opens each one separately — booking, tracking, updating statuses — copying data back into spreadsheets. It breaks every time a courier changes their portal.",
-  //       "inMind connects all courier partners into a single command center. Book, track, manage status updates, and switch couriers — from one screen.",
-  //     ],
-  //     highlight:
-  //       "Cut your dispatch time by 60%. Give your ops team their day back.",
-  //     ctaLabel: "See All Supported Couriers",
-  //     imageSrc: "/images/Vector.png",
-  //     reverse: true, // image right
-  //   },
-  //   {
-  //     stepNumber: 2,
-  //     eyebrow: "Real-Time Tracking",
-  //     heading: (
-  //       <>
-  //         Know where every order is,
-  //         <br />
-  //         without asking.
-  //       </>
-  //     ),
-  //     paragraphs: [
-  //       "No more pinging couriers for updates or refreshing five different tracking pages. Every shipment status lands in one live feed.",
-  //       "Customers get accurate ETAs automatically, and your support team stops fielding 'where's my order' tickets.",
-  //     ],
-  //     highlight:
-  //       "Cut support tickets by 40% with always-on tracking visibility.",
-  //     ctaLabel: "See Tracking In Action",
-  //     imageSrc: "/images/Vector.png",
-  //     reverse: false,
-  //   },
-  //   {
-  //     stepNumber: 3,
-  //     eyebrow: "Smart Courier Selection",
-  //     heading: (
-  //       <>
-  //         Pick the fastest, cheapest
-  //         <br />
-  //         courier every time.
-  //       </>
-  //     ),
-  //     paragraphs: [
-  //       "Rates, speed, and reliability vary by route and courier. Manually comparing them order by order doesn't scale.",
-  //       "inMind compares all your connected couriers instantly and recommends the best one for every order.",
-  //     ],
-  //     highlight: "Save up to 20% on delivery costs with smarter routing.",
-  //     ctaLabel: "Explore Smart Routing",
-  //     imageSrc: "/images/Vector.png",
-  //     reverse: true, // image right
-  //   },
-  //   {
-  //     stepNumber: 4,
-  //     eyebrow: "One-Click Reporting",
-  //     heading: (
-  //       <>
-  //         Stop building spreadsheets
-  //         <br />
-  //         by hand every week.
-  //       </>
-  //     ),
-  //     paragraphs: [
-  //       "Pulling delivery performance, costs, and failure rates from five portals takes hours and is error-prone.",
-  //       "Get a single dashboard with the metrics that matter, updated automatically as orders move.",
-  //     ],
-  //     highlight: "Save 5+ hours a week previously spent on manual reporting.",
-  //     ctaLabel: "View Sample Report",
-  //     imageSrc: "/images/Vector.png",
-  //     reverse: false,
-  //   },
-  // ];
-
-  const data = [
+  const steps = [
     {
-      id: 1,
-      title1: "attempt management",
-      title2: "",
-      paragraph1: "",
-      paragraph2: "",
-      paragraph3: "",
-      btnText: "",
+      stepNumber: 1,
+      heading: "Returns are killing your margins. Most of them were avoidable.",
+      paragraphs: `Every returned order costs you the courier fee forward, the courier fee back, the repackaging, and the lost sale window. For most Pakistani brands, 20–35% of orders come back — and no one knows why.
+                    inMind's Attempt Management tracks every failed delivery in real time, flags high-risk orders before dispatch, and triggers automatic WhatsApp follow-ups.`,
+      highlight:
+        "Brands using inMind reduce their return rate by up to 40% within the first 90 days.",
+      btnText: "See All Supported Couriers",
+      btnBlur: "Attempt Management",
+      imageSrc: "/images/Vector.png",
+      reverse: false, // image right
     },
     {
-      id: 1,
-      title1: "",
-      title2: "",
-      paragraph1: "",
-      paragraph2: "",
-      paragraph3: "",
-      btnText: "",
+      stepNumber: 2,
+      heading: "You shouldn't need 5 browser tabs to ship one order.",
+      paragraphs: `TCS. Leopards. Trax. Swyft. BlueEX. Your team opens each one separately — booking, tracking, updating statuses — copying data back into spreadsheets. It breaks every time a courier changes their portal.
+inMind connects all courier partners into a single command center. Book, track, manage status updates, and switch couriers — from one screen.`,
+      highlight:
+        "Cut your dispatch time by 60%. Give your ops team their day back..",
+      btnText: "See All Supported Couriers",
+      btnBlur: "Unified Courier Management",
+      imageSrc: "/images/Vector.png",
+      reverse: true,
     },
     {
-      id: 1,
-      title1: "",
-      title2: "",
-      paragraph1: "",
-      paragraph2: "",
-      paragraph3: "",
-      btnText: "",
+      stepNumber: 3,
+      heading: "Couriers owe you money. Do you know exactly how much?",
+      paragraphs: `Every COD order you ship, the courier collects cash on your behalf. Reconciling across multiple couriers, hundreds of shipments, partial remittances — it's a full-time job. Most brands are losing PKR 50,000–500,000+ every month.
+inMind's Accounts Receivable dashboard shows exactly what every courier owes you, down to the shipment, with one click.`,
+      highlight:
+        "One brand recovered PKR 2.3M in outstanding courier receivables in their first quarter.",
+      btnText: "See the Receivables Dashboard",
+      btnBlur: "Courier Receivables",
+      imageSrc: "/images/Vector.png",
+      reverse: false,
     },
     {
-      id: 1,
-      title1: "",
-      title2: "",
-      paragraph1: "",
-      paragraph2: "",
-      paragraph3: "",
-      btnText: "",
+      stepNumber: 4,
+      heading: "You're paying 3 different tools to do what we do in one.",
+      paragraphs: `WhatsApp automation; one subscription. AI automation; another tool. Manual team CRM follow-ups; another platform. Most brands are stitching together 4–5 tools and still not getting the coverage they need.
+inMind has WhatsApp automation and AI-powered workflows built right in; order confirmations, attempt follow-ups, delivery notifications, return alerts, and custom triggers; all managed from the same platform where your orders live. No integrations. No extra subscriptions.`,
+      highlight:
+        "Replace up to 3 separate tools. Save PKR 30,000–80,000/month in software costs.",
+      btnText: "Explore Automation Features",
+      btnBlur: "Built-in Automation",
+      imageSrc: "/images/Vector.png",
+      reverse: true,
     },
   ];
+
   return (
     <>
       <Hero />
@@ -154,13 +90,14 @@ export default function Home() {
           />
         </div>
       </section>
-      {/* {steps.map((step) => (
+      {steps.map((step) => (
         // Always include a unique key when rendering lists in React
         <Services key={step.stepNumber} {...step} />
-      ))} */}
+      ))}
       <SetupProcedure />
 
       <Platform />
+      <Carousel />
       <PrimaryBanner />
       <BookingOffer />
     </>

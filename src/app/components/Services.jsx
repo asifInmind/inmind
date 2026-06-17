@@ -1,113 +1,58 @@
-import React from "react";
-
-
+import Image from "next/image";
 export default function Services({
   stepNumber,
-  eyebrow,
   heading,
-  paragraphs = [],
+  paragraphs,
   highlight,
-  ctaLabel,
-  ctaHref = "#",
+  btnText,
   imageSrc,
-  imageAlt = "",
+  btnBlur,
   reverse = false,
 }) {
   return (
-    <section className="w-full bg-[#FAF9F6] py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
+    <>
+      <section className="w-full">
         <div
-          className={`flex flex-col items-center gap-10 lg:gap-16 ${
-            reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-          }`}
+          className={`w-310 h-122 flex justify-between items-center gap-14  ms-auto me-auto mb-20 `}
+          style={{
+            flexDirection: reverse ? "row-reverse" : "row",
+            alignItems: "center",
+          }}
         >
-          {/* Content side */}
-          <div className="w-full lg:w-1/2">
-            {eyebrow && (
-              <span className="inline-block rounded-full bg-[#EFEDE7] px-4 py-1.5 text-xs sm:text-sm font-medium text-[#3D3D3A]">
-                {eyebrow}
-              </span>
-            )}
-
-            <h2 className="mt-4 text-2xl sm:text-3xl lg:text-[2rem] font-bold leading-snug text-[#1F1F1D]">
-              {heading}
-            </h2>
-
-            {paragraphs.map((p, i) => (
-              <p
-                key={i}
-                className="mt-4 text-sm sm:text-base leading-relaxed text-[#6B6B66]"
-              >
-                {p}
-              </p>
-            ))}
-
-            {highlight && (
-              <div className="mt-6 rounded-xl bg-[#EFEDE7] px-5 py-4 text-sm sm:text-base font-medium text-[#2A2A28]">
-                {highlight}
-              </div>
-            )}
-
-            {ctaLabel && (
-              <a
-                href={ctaHref}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0F6E5E] px-6 py-3 text-sm sm:text-base font-medium text-white transition-colors duration-200 hover:bg-[#0C5A4D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E5E] focus-visible:ring-offset-2"
-              >
-                {ctaLabel}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-            )}
+          <div className="w-115 h-122 flex justify-center items-center ">
+            {" "}
+            <Image
+              src={imageSrc}
+              width={100}
+              height={100}
+              alt="dummey image "
+              className="w-115.5 h-115.5"
+            />
           </div>
-
-          {/* Image side */}
-          <div className="relative w-full lg:w-1/2 flex items-center justify-center">
-            {/* step number badge */}
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-[calc(100%+24px)] flex flex-col items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#8A8A85] text-base font-semibold text-white">
-                {stepNumber}
-              </span>
-              <span className="hidden lg:block h-24 w-px bg-[#D8D6CF]" aria-hidden="true" />
-            </div>
-
-            <div className="aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-[#9A9A95] sm:max-w-sm lg:max-w-md">
-              {imageSrc ? (
-                <img
-                  src={imageSrc}
-                  alt={imageAlt}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-white/70">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-1/3 w-1/3"
-                    aria-hidden="true"
-                  >
-                    <circle cx="8" cy="9" r="2" />
-                    <path d="M21 15l-5-5L5 21h16l-2-3z" />
-                  </svg>
-                </div>
-              )}
-            </div>
+          <div className="w-15 h-101.5 flex justify-start gap-1 items-center flex-col ">
+            {" "}
+            <p className="w-15 h-15 bg-[#909090] rounded-[30px] text-center text-[30px] font-bold text-white flex justify-center items-center">
+              {stepNumber}
+            </p>
+            <div className="w-1 h-84.5 bg-[#909090]"></div>
+          </div>
+          <div className="w-115 h-122 ">
+            <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[16px] font-normal">
+              {btnBlur}
+            </span>
+            <h1 className="font-bold text-[28px] leading-[100%] py-5 ">
+              {heading}
+            </h1>
+            <p className="font-medium text-[14px]  pb-5 ">{paragraphs}</p>
+            <p className=" w-115.5 h-16 bg-[#D9D9EF] rounded-[10px] font-medium text-[1rem] py-2.5 px-5 mb-15">
+              {highlight}
+            </p>
+            <button className="w-91 h-11 rounded-[100px] capitalize bg-[#328476] py-2.5 px-5 font-medium text-[14px] text-white">
+              {btnText}
+            </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
