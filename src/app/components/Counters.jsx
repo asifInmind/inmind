@@ -36,44 +36,44 @@ export default function Counters() {
   return (
     <>
       <section className="flex flex-col md:flex-row md:justify-center md:items-center">
-        <div className="w-90 h-50 py-4 px-8 flex justify-center items-start bg-[#161326] flex-col border border-r-[#4B4763]">
-          <h1 className=" leading-[100%] text-[#328476] font-bold text-[50px]">
+        <div className="w-full md:w-1/4 lg:w-90 h-auto md:h-50 py-6 md:py-4 px-8 flex justify-center items-start bg-[#161326] flex-col border-b md:border-b-0 md:border-r border-[#4B4763]">
+          <h1 className=" leading-[100%] text-[#328476] font-bold text-[40px] md:text-[50px]">
             <AnimatedCounter
               from={0}
               to={32}
               formatter={(val) => `${(val / 10).toFixed(1)}M+`}
             />
           </h1>
-          <p className="text-[#ffffff] font-normal text-[18px] leading-[100%] mt-3">
+          <p className="text-[#ffffff] font-normal text-[16px] md:text-[18px] leading-[100%] mt-3">
             Orders managed on platform
           </p>
         </div>
-        <div className="w-90 h-50 py-4 px-8 flex justify-center items-start bg-[#161326] flex-col  border border-r-[#4B4763]">
-          <h1 className="leading-[100%] text-[#328476] font-bold text-[50px]">
+        <div className="w-full md:w-1/4 lg:w-90 h-auto md:h-50 py-6 md:py-4 px-8 flex justify-center items-start bg-[#161326] flex-col border-b md:border-b-0 md:border-r border-[#4B4763]">
+          <h1 className="leading-[100%] text-[#328476] font-bold text-[40px] md:text-[50px]">
             <AnimatedCounter from={0} to={40} formatter={(val) => `${val}%`} />
           </h1>{" "}
-          <p className="text-[#ffffff] font-normal text-[18px] leading-[100%] mt-3">
+          <p className="text-[#ffffff] font-normal text-[16px] md:text-[18px] leading-[100%] mt-3">
             Average reduction in return rate{" "}
           </p>
         </div>
-        <div className="w-90 h-50 py-4 px-8 flex justify-center items-start bg-[#161326] flex-col  border border-r-[#4B4763]">
-          <h1 className="leading-[100%] text-[#328476] font-bold text-[50px]">
+        <div className="w-full md:w-1/4 lg:w-90 h-auto md:h-50 py-6 md:py-4 px-8 flex justify-center items-start bg-[#161326] flex-col border-b md:border-b-0 md:border-r border-[#4B4763]">
+          <h1 className="leading-[100%] text-[#328476] font-bold text-[40px] md:text-[50px]">
             <AnimatedCounter from={1} to={5} />
             →1
           </h1>{" "}
-          <p className="text-[#ffffff] font-normal text-[18px] leading-[100%] mt-3">
+          <p className="text-[#ffffff] font-normal text-[16px] md:text-[18px] leading-[100%] mt-3">
             Courier portals replaced{" "}
           </p>
         </div>
-        <div className="w-90 h-50 py-4 px-8 flex justify-center items-start bg-[#161326] flex-col ">
-          <h1 className="leading-[100%] text-[#328476] font-bold text-[50px]">
+        <div className="w-full md:w-1/4 lg:w-90 h-auto md:h-50 py-6 md:py-4 px-8 flex justify-center items-start bg-[#161326] flex-col ">
+          <h1 className="leading-[100%] text-[#328476] font-bold text-[40px] md:text-[50px]">
             <AnimatedCounter
               from={0}
               to={32}
               formatter={(val) => `Rs ${(val / 10).toFixed(1)} M`}
             />
           </h1>{" "}
-          <p className="text-[#ffffff] font-normal text-[18px] leading-[100%] mt-3">
+          <p className="text-[#ffffff] font-normal text-[16px] md:text-[18px] leading-[100%] mt-3">
             Recovered in courier receivables
           </p>
         </div>

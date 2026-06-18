@@ -1,5 +1,4 @@
-import Image from "next/image";
-import FeaturesSteps from "./components/FeaturesSteps";
+"use client";
 import SetupProcedure from "./components/SetupProcedure";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -8,7 +7,12 @@ import Carousel from "./components/Carousel";
 import Counters from "./components/Counters";
 import BookingOffer from "./components/BookingOffer";
 import PrimaryBanner from "./components/PrimaryBanner";
+import AnimatedImages from "./components/AnimatedImages";
+import { useState, useEffect } from "react";
 export default function Home() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
   const steps = [
     {
       stepNumber: 1,
@@ -59,20 +63,33 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
       reverse: true,
     },
   ];
+  useEffect(() => {
+    if (isPaused) return;
 
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % steps.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [steps.length, isPaused]);
   return (
     <>
       <Hero />
-      {/* <FeaturesSteps/> */}
+
       <Counters />
-      <section className=" w-full min-h-screen flex justify-center  gap-6">
-        <div className="w-273.5 h-83 ms-25 mt-22.75  ">
-          <p className="text-[15px] uppercase">Why Brands Switch to InMind</p>
-          <h1 className="font-bold text-[60px]">Your ops team is drowning.</h1>
-          <h1 className="font-bold text-[60px]">
+
+      <section className="w-full min-h-auto md:min-h-screen flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0 relative overflow-hidden ">
+        <div className="w-full md:w-310.5 h-auto md:h-83 ms-0 md:ms-25 mt-10 md:mt-22.75">
+          <p className="text-[14px] md:text-[15px] uppercase">
+            Why Brands Switch to InMind
+          </p>
+          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight">
+            Your ops team is drowning.
+          </h1>
+          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight">
             Not because they're incompetent.
           </h1>
-          <p className="font-normal text-[20px] leading-7.5">
+          <p className="font-normal text-[15px] md:text-[20px] leading-6 md:leading-7.5 pt-4 md:pt-0 w-237.75">
             Most ecommerce brands in Pakistan are running operations on a
             patchwork of courier portals, WhatsApp threads, Excel sheets, and
             gut feeling. Every day, money slips through the cracks — in returns
@@ -81,19 +98,33 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
             it. In one place.
           </p>
         </div>
-        <div className="w-124.25 h-122.75  relative">
-          <Image
-            src={"/images/Ellipse 2360.png"}
-            alt="vector images"
-            width={50}
-            height={50}
-          />
+        <div className="hidden md:block  md:absolute -right-20 top-30">
+          <AnimatedImages />
         </div>
       </section>
-      {steps.map((step) => (
-        // Always include a unique key when rendering lists in React
-        <Services key={step.stepNumber} {...step} />
-      ))}
+      <div
+        className="relative w-full overflow-hidden min-h-122"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        style={{
+          cursor:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='54' height='54' style='font-size:16px'><text y='16'>⏸️</text></svg>\"), auto",
+        }}
+      >
+        {steps.map((step, index) => (
+          <div
+            key={step.stepNumber}
+            className={`w-full transition-all duration-700 ease-in-out ${
+              index === activeIndex
+                ? "opacity-100 translate-y-0 relative z-10"
+                : "opacity-0 translate-y-10 absolute top-0 left-0 -z-10 pointer-events-none"
+            }`}
+          >
+            <Services {...step} />
+          </div>
+        ))}
+      </div>
+
       <SetupProcedure />
 
       <Platform />

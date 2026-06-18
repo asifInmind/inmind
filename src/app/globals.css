@@ -10,3 +10,15 @@
   padding: 0%;
   box-sizing: border-box;
 }
+
+/* globals.css */
+@layer utilities {
+  @keyframes continuousRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

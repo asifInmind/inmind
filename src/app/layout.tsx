@@ -6,6 +6,9 @@ import localFont from "next/font/local";
 export const metadata: Metadata = {
   title: "inmind",
   description: "A platform for Order management system OMS",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 const satoshi = localFont({

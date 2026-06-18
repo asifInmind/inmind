@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "embla-carousel": "^9.0.0-rc02",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^9.0.0-rc02",
     "framer-motion": "^12.40.0",
     "next": "16.2.9",

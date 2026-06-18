@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   NextButton,
   PrevButton,
@@ -89,10 +90,10 @@ const EmblaCarousel = (props) => {
       </div>
 
       <div className=" relative flex flex-row justify-between items-center w-full mt-5 gap-4">
-        {/* <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div> */}
+        </div>
 
         <div className="flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-2 max-w-full">
           {scrollSnaps.map((_, index) => (
