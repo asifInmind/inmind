@@ -24,9 +24,8 @@ export const useDotButton = (emblaApi) => {
 
   const onDotButtonClick = useCallback(
     (index) => {
-      if (!emblaApi) return;
-      if (typeof emblaApi.scrollTo === "function") emblaApi.scrollTo(index);
-      else if (typeof emblaApi.goTo === "function") emblaApi.goTo(index);
+      if (!emblaApi) return; // ✅ guard
+      emblaApi.scrollTo(index);
     },
     [emblaApi],
   );

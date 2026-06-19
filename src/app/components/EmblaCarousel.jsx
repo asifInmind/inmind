@@ -55,10 +55,22 @@ const EmblaCarousel = (props) => {
   ];
   const { options } = props;
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    ...options,
-  });
+  const autoplayPlugin = React.useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+    }),
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: "start",
+      loop: true,
+      ...options,
+    },
+    [autoplayPlugin.current],
+  );
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -90,10 +102,10 @@ const EmblaCarousel = (props) => {
       </div>
 
       <div className=" relative flex flex-row justify-between items-center w-full mt-5 gap-4">
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
+        </div>*/}
 
         <div className="flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-2 max-w-full">
           {scrollSnaps.map((_, index) => (

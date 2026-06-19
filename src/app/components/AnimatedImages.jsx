@@ -3,48 +3,84 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const SIZE = 300;
+const RADIUS = 145;
+const CENTER = SIZE / 2;
+
+const orbitPath = `M ${CENTER},${CENTER - RADIUS} A ${RADIUS},${RADIUS} 0 1,1 ${CENTER - 0.1},${CENTER - RADIUS} Z`;
+
+const dotAngles = [0, 45, 90, 135, 180, 225, 270, 315];
+
+const icons = [
+  "/icons/icon (1).svg",
+  "/icons/icon (2).svg",
+  "/icons/icon (3).svg",
+  "/icons/icon (4).svg",
+  "/icons/icon (5).svg",
+];
+
 export default function AnimatedImages() {
-  // PERFECT CENTER MATH:
-  // Center is 150. Radius is 145.
-  // Start point must be X = 150, Y = 5 (150 - 145) to stay perfectly centered!
-  const orbitPath = "M 150, 5 A 145,145 0 1,1 149.9,5 Z";
-
-  const icons = [
-    "/icons/icon (1).svg",
-    "/icons/icon (2).svg",
-    "/icons/icon (3).svg",
-    "/icons/icon (4).svg",
-    "/icons/icon (5).svg",
-  ];
-
   return (
-    <div className="relative w-75 h-75 rounded-full flex items-center justify-center border border-[#cac9c9]">
-      <div className="w-61 h-61 z-10 flex items-center justify-center ">
+    <div
+      className="relative flex items-center justify-center"
+      style={{ width: SIZE, height: SIZE }}
+    >
+      <svg
+        className="absolute inset-0 pointer-events-none"
+        width={SIZE}
+        height={SIZE}
+        viewBox={`0 0 ${SIZE} ${SIZE}`}
+        overflow="visible"
+      >
+        <circle
+          cx={CENTER}
+          cy={CENTER}
+          r={RADIUS}
+          fill="none"
+          stroke="#cac9c9"
+          strokeWidth={1}
+        />
+
+        {dotAngles.map((angle) => {
+          const rad = (angle * Math.PI) / 180;
+          const x = CENTER + RADIUS * Math.sin(rad);
+          const y = CENTER - RADIUS * Math.cos(rad);
+          return (
+            <circle
+              key={angle}
+              cx={x}
+              cy={y}
+              r={angle % 90 === 0 ? 4 : 3}
+              fill="#cac9c9"
+            />
+          );
+        })}
+      </svg>
+
+      <div className="relative z-10 flex items-center justify-center">
         <Image
-          src={"/images/Vector 16.png"}
+          src="/images/Vector 17.png"
           width={150}
           height={150}
-          alt="vector image"
-          className="rotate-360"
+          alt="center graphic"
         />
       </div>
 
       {icons.map((icon, index) => {
-        const startingPercentage = (index / icons.length) * 100;
+        const startOffset = (index / icons.length) * 100;
 
         return (
           <motion.div
             key={index}
-            className="w-10 h-10 rounded-full flex items-center justify-center absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2"
+            className="absolute flex items-center justify-center w-11 h-11 rounded-full "
             style={{
               offsetPath: `path("${orbitPath}")`,
+              left: 0,
+              top: 0,
             }}
             animate={{
-              offsetDistance: [
-                `${startingPercentage}%`,
-                `${startingPercentage + 100}%`,
-              ],
-              offsetRotate: "0deg",
+              offsetDistance: [`${startOffset}%`, `${startOffset + 100}%`],
+              offsetRotate: "0deg", // keep icons upright
             }}
             transition={{
               duration: 12,
@@ -54,9 +90,9 @@ export default function AnimatedImages() {
           >
             <Image
               src={icon}
-              alt="icons"
-              width={40}
-              height={40}
+              alt={`icon ${index + 1}`}
+              width={48}
+              height={48}
               className="object-contain"
             />
           </motion.div>

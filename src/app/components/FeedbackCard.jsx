@@ -4,7 +4,14 @@ export default function FeedbackCard({ message, image, title, address }) {
   return (
     <section className="shadow bg-[#FFFFFF] p-7.5 w-full h-70.75 flex flex-col justify-between rounded-[14px]">
       <div>
-        <Image src="/icons/Group.svg" alt="comma icon" width={50} height={50} />
+        <Image
+          src="/icons/Group.svg"
+          alt="comma icon"
+          width={50}
+          height={50}
+          className="w-auto"
+          h-auto
+        />
       </div>
       <div className="my-2">
         <p className="font-medium text-base sm:text-lg text-gray-800 line-clamp-3">

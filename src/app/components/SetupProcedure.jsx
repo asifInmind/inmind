@@ -84,14 +84,14 @@ export default function SetupProcedure() {
               width={200}
               height={200}
               alt="vector decore image "
-              className="absolute left-78 bottom-28"
+              className="absolute left-78 bottom-28 w-auto h-auto"
             />
             <Image
               src={"/icons/Vector.svg"}
               width={100}
               height={100}
               alt="vector decore image "
-              className="absolute right-92 bottom-38 z-11 rotate-45"
+              className="absolute right-92 bottom-38 z-11 rotate-45 w-auto h-auto"
             />
           </div>
         </div>
