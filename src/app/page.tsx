@@ -78,18 +78,18 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
 
       <Counters />
 
-      <section className="w-full min-h-auto md:min-h-screen flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0 relative overflow-hidden ">
-        <div className="w-full md:w-310.5 h-auto md:h-83 ms-0 md:ms-25 mt-10 md:mt-22.75">
+      <section className="w-full lg:h-auto flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0 relative overflow-hidden py-10 md:py-12">
+        <div className="w-full md:w-180 lg:w-215 lg:ms-20 h-auto lg:h-auto md:h-85 ms-0 md:ms-25 md:me-25 z-100">
           <p className="text-[14px] md:text-[15px] uppercase">
             Why Brands Switch to InMind
           </p>
-          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight">
+          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight lg:text-[45px]">
             Your ops team is drowning.
           </h1>
-          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight">
+          <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight lg:text-[45px]">
             Not because they're incompetent.
           </h1>
-          <p className="font-normal text-[15px] md:text-[20px] leading-6 md:leading-7.5 pt-4 md:pt-0 w-237.75">
+          <p className=" font-normal text-[15px] md:text-[20px] leading-6 md:leading-7.5 pt-4 md:pt-0 w-237.75 lg:w-220 md:w-190">
             Most ecommerce brands in Pakistan are running operations on a
             patchwork of courier portals, WhatsApp threads, Excel sheets, and
             gut feeling. Every day, money slips through the cracks — in returns

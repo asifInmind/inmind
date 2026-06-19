@@ -17,7 +17,7 @@ export default function Card({
         className="border border-[#4B4763] rounded-xs p-2.5"
         style={{ width: cardWidth, height: cardHeight, borderRadius: brRadius }}
       >
-        <h1 className="font-bold text-[30px] capitilize leading-[100%] text-[#fafafa]">
+        <h1 className="font-bold text-[30px] capitilize leading-[100%] text-[#fafafa] md:text-[15px] lg:text-[20px]">
           {title}
         </h1>
         <p className="font-normal text-[14px] text-[#fafafa] pt-3 pb-8">
@@ -28,7 +28,7 @@ export default function Card({
           style={{
             width: imgBoxWidth,
             height: imgBoxHeight,
-            marginTop: margin,
+            // marginTop: margin,
           }}
         >
           {" "}

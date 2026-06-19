@@ -62,7 +62,7 @@ export default function BookingOffer() {
           whileInView="visible"
           viewport={{ once: false }}
           variants={headingVariants}
-          className="w-full max-w-310.5 h-auto font-bold text-[28px] sm:text-[40px] md:text-[55px] lg:text-[70px] text-center leading-tight md:leading-20 text-[#ffffff]"
+          className="w-full max-w-310.5 h-auto font-bold text-[28px] sm:text-[40px] md:text-[40px] lg:text-[60px] text-center leading-tight md:leading-20 text-[#ffffff] lg:w-235 "
         >
           Your next{" "}
           <motion.span

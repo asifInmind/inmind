@@ -58,7 +58,7 @@ function AnimatedHeading() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
-      className="w-full max-w-184.5 font-bold text-[32px] sm:text-[42px] md:text-[60px] mt-3 text-[#ffffff]"
+      className="w-full max-w-184.5 font-bold text-[32px] sm:text-[42px] md:text-[40px] mt-3 text-[#ffffff]"
     >
       {words.map((word, i) => {
         const isHighlighted = word === "Pakistani";

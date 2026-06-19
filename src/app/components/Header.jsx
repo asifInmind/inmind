@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-[95%] lg:w-330 bg-[#161326] rounded-[10px] h-19 flex justify-between items-center shadow ms-auto me-auto py-4 px-4 fixed left-0 right-0 top-5 z-1000">
+      <header className="fixed right-0 left-0 mx-auto w-[90%] top-5  bg-[#161326] rounded-[10px] h-19 flex justify-between items-center shadow py-4 px-4 z-50">
         <section>
           <Image
             src={"/icons/logo.svg"}

@@ -29,7 +29,7 @@ export default function SetupProcedure() {
     <>
       <section className="bg-[#FAF9F6] h-auto relative w-full overflow-hidden">
         <div className="w-full max-w-310 ms-auto me-auto px-4 md:px-8 lg:px-0 py-16 md:py-20 lg:py-25">
-          <div className="w-full max-w-257.5 h-auto relative">
+          <div className="w-full max-w-257.5 h-auto relative lg:ps-10 ">
             <p className="text-[14px] md:text-[15px] uppercase tracking-wide">
               process------
             </p>

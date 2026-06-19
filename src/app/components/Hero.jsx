@@ -31,7 +31,7 @@ export default function Hero() {
         animate="visible"
       >
         <motion.h1
-          className="font-bold text-[32px] sm:text-[44px] sm:mt-12 md:text-[56px] lg:text-[70px] text-[#ffffff] leading-tight"
+          className="font-bold text-[32px] sm:text-[44px] sm:mt-12 md:text-[56px] lg:text-[70px] text-[#ffffff] leading-tight lg:mt-15"
           variants={itemVariants}
         >
           One platform to run your entire operation

@@ -13,28 +13,30 @@ export default function Services({
     <>
       <section className="w-full">
         <div
-          className={`w-full max-w-310 flex flex-col ${
-            reverse ? "md:flex-row-reverse" : "md:flex-row"
-          } justify-between items-center gap-8 md:gap-14 ms-auto me-auto mb-20 px-4 md:px-0`}
+          className={`w-full max-w-310 flex flex-col md:w-full mx-auto  ${
+            reverse
+              ? "md:flex-col-reverse lg:flex-row-reverse"
+              : "md:flex-col lg:flex-row"
+          } justify-between items-center lg:w-210 gap-8 md:gap-14  mb-20 px-4 md:px-0`}
         >
-          <div className="w-full md:w-115 h-auto md:h-122 flex justify-center items-center ">
+          <div className="w-full md:w-175 h-auto md:h-175 flex justify-center items-center ">
             {" "}
             <Image
               src={imageSrc}
               width={100}
               height={100}
               alt="dummey image "
-              className="w-full max-w-115.5 h-auto md:h-115.5"
+              className="w-full  h-auto md:h-115.5 lg:h-auto "
             />
           </div>
-          <div className="hidden md:flex w-15 h-101.5 justify-start gap-1 items-center flex-col ">
+          <div className="hidden md:hidden w-15 h-101.5 justify-start gap-1 items-center flex-col ">
             {" "}
             <p className="w-15 h-15 bg-black rounded-[30px] text-center text-[30px] font-bold text-white flex justify-center items-center">
               {stepNumber}
             </p>
             <div className="w-1 h-84.5 bg-black"></div>
           </div>
-          <div className="w-full md:w-115 h-auto md:h-122 ">
+          <div className="w-full md:w-175 h-auto md:h-auto md:ms-2 ">
             <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[16px] font-normal">
               {btnBlur}
             </span>
