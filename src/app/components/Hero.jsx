@@ -23,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-170 lg:h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
+    <section className="bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/heromobile.png')] md:bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-170 lg:h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
       <motion.div
         className="w-full max-w-216.75 h-auto md:h-94.5 text-center"
         variants={containerVariants}

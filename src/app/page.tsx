@@ -79,7 +79,7 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
       <Counters />
 
       <section className="w-full lg:h-auto flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0 relative overflow-hidden py-10 md:py-12">
-        <div className="w-full md:w-180 lg:w-215 lg:ms-20 h-auto lg:h-auto md:h-85 ms-0 md:ms-25 md:me-25 z-100">
+        <div className="w-full md:w-180 lg:w-215 xl:w-290 xl:ms-15 lg:ms-20 h-auto lg:h-auto md:h-85 ms-0 md:ms-25 md:me-25 z-100">
           <p className="text-[14px] md:text-[15px] uppercase">
             Why Brands Switch to InMind
           </p>
@@ -98,7 +98,7 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
             it. In one place.
           </p>
         </div>
-        <div className="hidden md:block  md:absolute -right-20 top-30">
+        <div className="hidden md:block lg:top-10  md:absolute -right-20 top-30">
           <AnimatedImages />
         </div>
       </section>

@@ -65,7 +65,7 @@ export default function Platform() {
           />
         </div>
         <motion.section
-          className="w-full max-w-310 md:w-180 mx-auto h-auto  mb-16.5 lg:ps-10"
+          className="w-full max-w-310 md:w-180 mx-auto h-auto lg:w-7xl  mb-16.5 lg:ps-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
@@ -137,7 +137,7 @@ export default function Platform() {
         </section>
 
         {/* second row */}
-        <section className="flex flex-col md:flex-row justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:w-240 ms-auto me-auto lg:items-start">
+        <section className="flex flex-col md:flex-row justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:justify-center lg:w-240 xl:260 ms-auto me-auto lg:items-start">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -216,7 +216,7 @@ export default function Platform() {
         </section>
 
         {/* third row */}
-        <section className="flex flex-col md:flex-row justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:w-240 ms-auto me-auto">
+        <section className="flex flex-col md:flex-row justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:justify-center lg:w-240 ms-auto me-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -270,23 +270,23 @@ export default function Platform() {
         </section>
 
         {/* last row */}
-        <section className="flex justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:w-240 xl:w-310 ms-auto me-auto">
+        <section className="flex justify-center items-center gap-5 my-5 md:w-180 md:justify-start lg:justify-center lg:w-240 xl:w-310 ms-auto me-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
             variants={slideInUp}
             transition={transition}
-            className="w-full lg:w-full md:w-auto bg-[#909090] z-1"
+            className="w-full md:w-auto lg:w-full xl:w-full bg-[#909090] z-1"
           >
             <Card
               title={"Multi-Team Access"}
               description={
                 "Roles and permissions for your entire operations team."
               }
-              cardWidth={getSize("1200px", "960px", "100%", "100%", "100%")}
+              cardWidth={getSize("1200px", "1240px", "100%", "100%", "100%")}
               cardHeight={getSize("489px", "489px", "auto", "auto", "auto")}
-              imgBoxWidth={getSize("1193px", "920px", "100%", "100%", "100%")}
+              imgBoxWidth={getSize("1193px", "1200px", "100%", "100%", "100%")}
               imgBoxHeight={getSize(
                 "340px",
                 "340px",
