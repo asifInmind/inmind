@@ -8,10 +8,11 @@ import Counters from "./components/Counters";
 import BookingOffer from "./components/BookingOffer";
 import PrimaryBanner from "./components/PrimaryBanner";
 import AnimatedImages from "./components/AnimatedImages";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const steps = [
     {
@@ -24,7 +25,7 @@ export default function Home() {
       btnText: "See All Supported Couriers",
       btnBlur: "Attempt Management",
       imageSrc: "/images/Vector.png",
-      reverse: false, // image right
+      reverse: false,
     },
     {
       stepNumber: 2,
@@ -63,19 +64,68 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
       reverse: true,
     },
   ];
+
   useEffect(() => {
-    if (isPaused) return;
+    const el = scrollRef.current;
+    if (!el) return;
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % steps.length);
-    }, 2000);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Only bind the wheel listener while the section is on screen
+        if (entry.isIntersecting) {
+          window.addEventListener("wheel", handleWheel, { passive: false });
+        } else {
+          window.removeEventListener("wheel", handleWheel);
+        }
+      },
+      { threshold: 0.3 },
+    );
 
-    return () => clearInterval(interval);
-  }, [steps.length, isPaused]);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  const activeIndexRef = useRef(0);
+  const cooldownRef = useRef(false);
+
+  const handleWheel = (e) => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const inView =
+      rect.top <= window.innerHeight * 0.5 &&
+      rect.bottom >= window.innerHeight * 0.5;
+    if (!inView) return;
+
+    const goingDown = e.deltaY > 0;
+    const atFirst = activeIndexRef.current === 0;
+    const atLast = activeIndexRef.current === steps.length - 1;
+
+    // Let normal scroll pass through at the boundaries
+    if ((goingDown && atLast) || (!goingDown && atFirst)) return;
+
+    // Intercept scroll and change slide instead
+    e.preventDefault();
+
+    if (cooldownRef.current) return;
+    cooldownRef.current = true;
+    setTimeout(() => (cooldownRef.current = false), 700); // matches transition duration
+
+    const next = goingDown
+      ? Math.min(activeIndexRef.current + 1, steps.length - 1)
+      : Math.max(activeIndexRef.current - 1, 0);
+
+    activeIndexRef.current = next;
+    setActiveIndex(next);
+  };
+
   return (
     <>
       <Hero />
-
       <Counters />
 
       <section className="w-full lg:h-auto flex flex-col md:flex-row justify-center items-center gap-6 px-4 md:px-0 relative overflow-hidden py-10 md:py-12">
@@ -89,7 +139,7 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
           <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight lg:text-[45px]">
             Not because they're incompetent.
           </h1>
-          <p className=" font-normal text-[15px] md:text-[20px] leading-6 md:leading-7.5 pt-4 md:pt-0 w-237.75 lg:w-220 md:w-190">
+          <p className="font-normal text-[15px] md:text-[20px] leading-6 md:leading-7.5 pt-4 md:pt-0 w-237.75 lg:w-220 md:w-190">
             Most ecommerce brands in Pakistan are running operations on a
             patchwork of courier portals, WhatsApp threads, Excel sheets, and
             gut feeling. Every day, money slips through the cracks — in returns
@@ -98,19 +148,31 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
             it. In one place.
           </p>
         </div>
-        <div className="hidden md:block lg:top-10  md:absolute -right-20 top-30">
+        <div className="hidden md:block lg:top-10 md:absolute -right-20 top-30">
           <AnimatedImages />
         </div>
       </section>
+
       <div
+        ref={scrollRef}
         className="relative w-full overflow-hidden min-h-122"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        style={{
-          cursor:
-            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='54' height='54' style='font-size:16px'><text y='16'>⏸️</text></svg>\"), auto",
-        }}
       >
+        {/* Progress dots */}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-2">
+          {steps.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                activeIndexRef.current = i;
+                setActiveIndex(i);
+              }}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "bg-[#328476] scale-125" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+
         {steps.map((step, index) => (
           <div
             key={step.stepNumber}
@@ -126,7 +188,6 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
       </div>
 
       <SetupProcedure />
-
       <Platform />
       <Carousel />
       <PrimaryBanner />
