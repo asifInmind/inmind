@@ -4,7 +4,9 @@
 @theme {
   --font-satoshi: var(--font-satoshi), sans-serif;
 }
-
+html {
+  scrollbar-gutter: stable;
+}
 :root {
   margin: 0%;
   padding: 0%;

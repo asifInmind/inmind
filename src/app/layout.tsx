@@ -23,7 +23,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Fixed: Removed the stray "}" from the template literal below
     <html lang="en" className={`${satoshi.variable} antialiased`}>
       <body className="font-satoshi">
         <Header />

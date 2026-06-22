@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 export default function Services({
   stepNumber,
   heading,
@@ -9,24 +10,37 @@ export default function Services({
   btnBlur,
   reverse = false,
 }) {
+  const slideInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 0.6,
+    ease: "easeOut",
+    delay: 0.1,
+  };
   return (
     <>
       <section className="w-full  lg:h-auto">
-        <div
-          className={`w-full max-w-310 flex flex-col md:w-full mx-auto  ${
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={slideInUp}
+          transition={transition}
+          className={`w-[90%] max-w-7xl flex flex-col xl:w-[95%]  mx-auto my-16  ${
             reverse
               ? "md:flex-col-reverse lg:flex-row-reverse"
               : "md:flex-col lg:flex-row"
-          } justify-between items-center lg:w-210 xl:w-260 2xl:w-300 gap-8 md:gap-14  px-4 md:px-0`}
+          } justify-between items-start  gap-10 md:gap-14  px-4 md:px-0`}
         >
-          <div className="w-full md:w-175 h-auto md:h-145 flex justify-center items-center ">
-            {" "}
+          <div className="relative w-full md:w-175 aspect-175/145 ">
             <Image
               src={imageSrc}
-              width={100}
-              height={100}
-              alt="dummey image "
-              className="w-full  h-auto md:h-115.5 lg:h-auto "
+              fill
+              alt="dummy image"
+              className="object-contain"
             />
           </div>
           <div className="hidden md:hidden w-15 xl:block h-101.5   gap-1   mx-auto">
@@ -36,14 +50,16 @@ export default function Services({
             </p>
             <div className="w-1 h-84.5 bg-black mx-auto"></div>
           </div>
-          <div className="w-full md:w-175 h-auto md:h-auto md:ms-2 ">
+          <div className="w-full md:w-175 h-auto md:ms-2 ">
             <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[16px] font-normal">
               {btnBlur}
             </span>
             <h1 className="font-bold text-[22px] sm:text-[25px] md:text-[28px] leading-[100%] py-5 ">
               {heading}
             </h1>
-            <p className="font-medium text-[14px]  pb-5 ">{paragraphs}</p>
+            <p className="font-medium text-[14px]  pb-5 whitespace-pre-line">
+              {paragraphs}
+            </p>
             <p className=" w-full md:w-115.5 h-auto md:h-16 bg-[#D9D9EF] rounded-[10px] font-medium text-[1rem] py-2.5 px-5 mb-15">
               {highlight}
             </p>
@@ -65,7 +81,7 @@ export default function Services({
               </span>
             </button>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

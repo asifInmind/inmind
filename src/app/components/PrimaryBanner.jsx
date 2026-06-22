@@ -58,7 +58,7 @@ function AnimatedHeading() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
-      className="w-full max-w-184.5 font-bold text-[32px] sm:text-[42px] md:text-[40px] mt-3 text-[#ffffff]"
+      className="w-full max-w-184.5 font-bold text-[32px] sm:text-[42px] md:text-[40px] mt-3 text-[#ffffff] text-center md:text-left flex flex-wrap justify-center md:justify-start"
     >
       {words.map((word, i) => {
         const isHighlighted = word === "Pakistani";
@@ -88,6 +88,7 @@ export default function PrimaryBanner() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
+            className="flex flex-col items-center md:items-start"
           >
             <motion.div variants={fadeUp}>
               <Button
@@ -103,7 +104,7 @@ export default function PrimaryBanner() {
 
             <motion.p
               variants={fadeUp}
-              className="font-medium text-[14px] md:text-[16px] w-full max-w-184.5 text-white"
+              className="font-medium text-[14px] md:text-[16px] w-full max-w-184.5 text-white text-center md:text-left mt-4 md:mt-0"
             >
               No dollar-denominated SaaS pricing. No features hidden behind
               expensive tiers. inMind is built for the realities of Pakistani
@@ -121,6 +122,7 @@ export default function PrimaryBanner() {
               width={"271px"}
               height={"50px"}
               bg={"#ffffff"}
+              color={"black"}
               content={"Talk to Us on WhatsApp"}
             />
           </motion.div>

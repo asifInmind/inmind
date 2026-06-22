@@ -25,7 +25,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed right-0 left-0 mx-auto w-[90%] top-5  bg-[#161326] rounded-[10px] h-19 flex justify-between items-center shadow py-4 px-4 z-50">
+      <header className="fixed left-1/2 -translate-x-1/2 w-[90%] xl:w-[90%] xl:max-w-7xl top-5 bg-[#161326] rounded-[10px] h-19 flex justify-between items-center shadow py-4 px-4 z-50">
+        {" "}
         <section>
           <Image
             src={"/icons/logo.svg"}
@@ -68,7 +69,6 @@ export default function Header() {
             </span>
           </button> */}
         </section>
-
         {/* mobile menu icon, only visible below lg */}
         <section className="block lg:hidden ">
           <svg
