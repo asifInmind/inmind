@@ -71,7 +71,6 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Only bind the wheel listener while the section is on screen
         if (entry.isIntersecting) {
           window.addEventListener("wheel", handleWheel, { passive: false });
         } else {
@@ -91,7 +90,7 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
   const activeIndexRef = useRef(0);
   const cooldownRef = useRef(false);
 
-  const handleWheel = (e) => {
+  const handleWheel = (e: any) => {
     const el = scrollRef.current;
     if (!el) return;
 
@@ -105,15 +104,13 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
     const atFirst = activeIndexRef.current === 0;
     const atLast = activeIndexRef.current === steps.length - 1;
 
-    // Let normal scroll pass through at the boundaries
     if ((goingDown && atLast) || (!goingDown && atFirst)) return;
 
-    // Intercept scroll and change slide instead
     e.preventDefault();
 
     if (cooldownRef.current) return;
     cooldownRef.current = true;
-    setTimeout(() => (cooldownRef.current = false), 700); // matches transition duration
+    setTimeout(() => (cooldownRef.current = false), 700);
 
     const next = goingDown
       ? Math.min(activeIndexRef.current + 1, steps.length - 1)
@@ -157,7 +154,7 @@ inMind has WhatsApp automation and AI-powered workflows built right in; order co
         ref={scrollRef}
         className="relative w-full overflow-hidden min-h-122"
       >
-        {/* Progress dots */}
+        {/* dots */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-2">
           {steps.map((_, i) => (
             <button
