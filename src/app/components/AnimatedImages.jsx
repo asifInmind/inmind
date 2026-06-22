@@ -77,10 +77,11 @@ export default function AnimatedImages() {
               offsetPath: `path("${orbitPath}")`,
               left: 0,
               top: 0,
+              offsetRotate: "0deg",
             }}
             animate={{
               offsetDistance: [`${startOffset}%`, `${startOffset + 100}%`],
-              offsetRotate: "0deg", // keep icons upright
+              // keep icons upright
             }}
             transition={{
               duration: 12,
