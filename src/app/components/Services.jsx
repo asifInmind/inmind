@@ -51,7 +51,7 @@ export default function Services({
             <div className="w-1 h-84.5 bg-black mx-auto"></div>
           </div>
           <div className="w-full md:w-175 h-auto md:ms-2 ">
-            <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[16px] font-normal">
+            <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[14px] md:text-[16px] font-normal">
               {btnBlur}
             </span>
             <h1 className="font-bold text-[22px] sm:text-[25px] md:text-[28px] leading-[100%] py-5 ">

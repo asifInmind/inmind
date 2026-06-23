@@ -30,9 +30,9 @@ export default function SetupProcedure() {
   return (
     <>
       <section className="bg-[#FAF9F6] h-auto relative w-full overflow-hidden">
-        <div className="w-full max-w-310 ms-auto me-auto px-8 md:px-10 lg:px-0 py-16 md:py-20  lg:py-25">
+        <div className="w-full max-w-310 ms-auto me-auto px-8 md:px-10 lg:px-0 py-16 md:py-20 lg:py-25">
           {/* Headings */}
-          <div className="w-full max-w-257.5 h-auto relative md:ps-10  ">
+          <div className="w-full max-w-257.5 h-auto relative md:ps-10">
             <p className="text-[14px] md:text-[15px] uppercase tracking-wide">
               process------
             </p>
@@ -58,12 +58,11 @@ export default function SetupProcedure() {
           </div>
 
           <div className="w-full overflow-hidden mt-10 md:mt-16 z-11">
-            {/* Added px-6 to the wrapper on mobile to cleanly offset the snapped cards and expose the next one */}
-            <div className="flex flex-row overflow-x-auto md:overflow-x-visible md:justify-center lg:mx-auto lg:w-245 xl:w-full lg:gap-5 justify-start gap-4 md:gap-8 relative snap-x snap-mandatory scrollbar-none pb-4 px-6 md:px-0 md:mx-0">
+            <div className="flex flex-row overflow-x-auto md:overflow-x-visible md:justify-center lg:mx-auto lg:w-245 xl:w-full lg:gap-5 justify-start gap-3 md:gap-8 relative snap-x snap-mandatory scrollbar-none pb-4 pl-4 pr-14 -mr-10 md:px-0 md:mx-0 md:mr-0">
               {data.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
+                  initial={{ opacity: 40, y: isMobile ? 0 : 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
@@ -71,7 +70,7 @@ export default function SetupProcedure() {
                     ease: "easeOut",
                     delay: index * 0.2,
                   }}
-                  className={`${item.zindex || ""} w-[80%] md:w-1/3 shrink-0 md:shrink snap-start h-auto bg-[#ffffff] rounded-[30px] cursor-pointer md:rounded-[50px] p-6 md:p-10 border border-[#e6e6e6] hover:bg-[#eeeeee]`}
+                  className={`${item.zindex || ""} w-[95%] md:w-1/3 shrink-0 md:shrink snap-start h-auto bg-[#ffffff] rounded-[30px] cursor-pointer md:rounded-[50px] p-6 md:p-10 border border-[#e6e6e6] hover:bg-[#eeeeee]`}
                 >
                   <Image
                     src={"/images/Vector.png"}
@@ -98,14 +97,14 @@ export default function SetupProcedure() {
                 width={200}
                 height={200}
                 alt="vector decore image"
-                className="hidden md:block absolute left-78 bottom-28 md:left-105  md:bottom-50 md:w-30 md:rotate-45 lg:left-150 lg:rotate-45 xl:left-190  w-auto h-auto pointer-events-none z-16"
+                className="hidden md:block absolute left-78 bottom-28 md:left-105 md:bottom-50 md:w-30 md:rotate-45 lg:left-150 lg:rotate-45 xl:left-190 w-auto h-auto pointer-events-none z-16"
               />
               <Image
                 src={"/icons/Vector.svg"}
                 width={100}
                 height={100}
                 alt="vector decore image"
-                className="hidden md:block absolute right-82 bottom-38 md:right-105 md:bottom-50 md:w-30 lg:right-155 xl:right-198 z-10 rotate-45 md:rotate-0 z-10 w-auto h-auto pointer-events-none"
+                className="hidden md:block absolute right-82 bottom-38 md:right-105 md:bottom-50 md:w-30 lg:right-155 xl:right-198 z-10 rotate-45 md:rotate-0 w-auto h-auto pointer-events-none"
               />
             </div>
           </div>
