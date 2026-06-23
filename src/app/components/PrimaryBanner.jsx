@@ -90,14 +90,18 @@ export default function PrimaryBanner() {
             viewport={{ once: false }}
             className="flex flex-col items-center md:items-start"
           >
-            <motion.div variants={fadeUp}>
-              <Button
+            <motion.div>
+              <span className="relative z-10 flex justify-center items-center  bg-[#328476] w-[271px] h-[50px] text-white rounded-[4px]">
+                Pakistani-built · PKR pricing
+              </span>
+
+              {/* <Button
                 width={"271px"}
                 height={"50px"}
                 bg={"#328476"}
                 color={"white"}
                 content={"Pakistani-built · PKR pricing"}
-              />
+              /> */}
             </motion.div>
 
             <AnimatedHeading />

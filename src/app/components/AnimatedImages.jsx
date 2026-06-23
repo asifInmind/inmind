@@ -63,6 +63,7 @@ export default function AnimatedImages() {
           width={150}
           height={150}
           alt="center graphic"
+          style={{ width: "100%", height: "auto " }}
         />
       </div>
 

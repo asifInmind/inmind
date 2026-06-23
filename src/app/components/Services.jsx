@@ -31,7 +31,7 @@ export default function Services({
           transition={transition}
           className={`w-[90%] max-w-7xl flex flex-col xl:w-[95%]  mx-auto my-16  ${
             reverse
-              ? "md:flex-col-reverse lg:flex-row-reverse"
+              ? "md:flex-col lg:flex-row-reverse"
               : "md:flex-col lg:flex-row"
           } justify-between items-start  gap-10 md:gap-14  px-4 md:px-0`}
         >

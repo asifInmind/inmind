@@ -25,6 +25,9 @@ export default function SetupProcedure() {
     },
   ];
 
+  // Helper to safely disable y-axis translation on mobile screens
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <>
       <section className="bg-[#FAF9F6] h-auto relative w-full overflow-hidden">
@@ -50,17 +53,18 @@ export default function SetupProcedure() {
                 width={210}
                 height={210}
                 alt="vector images"
+                className="w-full h-auto"
               />
             </div>
           </div>
 
           {/* --- FIXED CAROUSEL TRACK --- */}
           {/* Added md:justify-center to center columns perfectly on desktop viewports */}
-          <div className="flex flex-row overflow-x-auto md:overflow-x-visible md:justify-center justify-start gap-6 md:gap-8 w-full mt-10 md:mt-16 relative snap-x snap-mandatory scrollbar-none pb-4 px-4 -mx-4 md:px-0 md:mx-0">
+          <div className="flex flex-row overflow-x-auto md:overflow-x-visible md:justify-center lg:mx-auto lg:w-245 xl:w-full lg:gap-5 justify-start gap-6 md:gap-8 w-full mt-10 md:mt-16 relative snap-x snap-mandatory scrollbar-none pb-4 pl-[20px] pr-4 -mx-4 md:px-0 md:mx-0">
             {data.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
@@ -70,7 +74,7 @@ export default function SetupProcedure() {
                 }}
                 // Changed snap-center to snap-start for crisp alignment matching margins
                 // Added md:shrink so columns dynamically fit the container area without spillover
-                className={`${item.zindex || ""} w-[85%] md:w-1/3 shrink-0 md:shrink snap-start h-auto bg-[#ffffff] rounded-[30px] cursor-pointer md:rounded-[50px] p-8 md:p-10 border border-[#e6e6e6] hover:bg-[#eeeeee]`}
+                className={`${item.zindex || ""} w-[85%] md:w-1/3 shrink-0 md:shrink snap-center h-auto bg-[#ffffff] rounded-[30px] cursor-pointer md:rounded-[50px] p-8 md:p-10 border border-[#e6e6e6] hover:bg-[#eeeeee]`}
               >
                 <Image
                   src={"/images/Vector.png"}

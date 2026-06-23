@@ -30,12 +30,12 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1
-          className="font-bold text-[32px] sm:text-[44px] sm:mt-12 md:text-[56px] lg:text-[70px]  xl:text-[70px] 2xl:text-[90px] text-[#ffffff] leading-tight lg:mt-15"
-          variants={itemVariants}
-        >
-          One platform to run your <br /> entire operation
-        </motion.h1>
+       <motion.h1
+  className="mt-24 font-bold text-[32px] sm:mt-12 sm:text-[44px] md:text-[56px] lg:mt-15 lg:text-[70px] xl:text-[70px] 2xl:text-[90px] text-[#ffffff] leading-tight"
+  variants={itemVariants}
+>
+  One platform to run your <br /> entire operation
+</motion.h1>
 
         <motion.p
           className="text-[15px] sm:text-[17px] md:text-[20px] font-medium text-[#FFFFFF] pt-3"

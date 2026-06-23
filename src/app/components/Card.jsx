@@ -4,7 +4,7 @@ import React from "react";
 export default function Card({ title, description, imageSrc, brRadius }) {
   return (
     <div
-      className="border border-[#4B4763] rounded-sm p-4 w-full flex flex-col h-auto bg-[#424242] sm:h-[380px] md:h-[420px] lg:h-[489px]"
+      className="border border-[#4B4763] rounded-sm p-4 w-full flex flex-col h-auto bg-[#424242] sm:h-95 md:h-105 lg:h-122.25"
       style={{ borderRadius: brRadius }}
     >
       <div>
@@ -18,12 +18,16 @@ export default function Card({ title, description, imageSrc, brRadius }) {
 
       <div className="flex-1 flex justify-center items-center">
         <div
-          className="relative bg-[#545454] rounded-sm h-[200px] sm:h-[240px] md:h-[280px] lg:h-[340px]"
+          className="relative bg-[#545454] rounded-sm h-50 sm:h-60 md:h-70 lg:h-85"
           style={{ width: "calc(100% - 10px)" }}
         >
           <Image
             src={imageSrc || "/images/Vector.png"}
             fill
+            //  sizes="300px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            // width={200}
+            // height={100}
             alt={title}
             className="object-contain p-20"
           />
