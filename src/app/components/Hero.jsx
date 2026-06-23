@@ -23,22 +23,23 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/heromobile.jpg')] md:bg-[linear-gradient(to_bottom,#16132680_50%,#16132633_20%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-170 lg:h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
+    <section className="bg-[linear-gradient(to_bottom,#161326b3_50%,#16132680_20%),url('/images/heromobile.jpg')] md:bg-[linear-gradient(to_bottom,#161326b3_50%,#16132680_20%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-185 lg:h-185 bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
+      {" "}
       <motion.div
-        className="w-full  h-auto md:h-94.5 text-center"
+        className="w-full xl:w-220  md:w-200  h-auto text-center "
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
-          className="mt-24 font-bold text-[32px] sm:mt-12 sm:text-[44px] md:text-[56px] lg:mt-15 lg:text-[70px] xl:text-[70px] 2xl:text-[90px] text-[#ffffff] leading-tight"
+          className=" font-bold text-[32px] pt-15  md:mt-0  sm:text-[44px] md:text-[56px]  lg:text-[70px] xl:text-[70px] 2xl:text-[90px] text-[#ffffff] "
           variants={itemVariants}
         >
-          One platform to run your <br /> entire operation
+          One platform to run your entire operation
         </motion.h1>
 
         <motion.p
-          className="text-[15px] sm:text-[17px] md:text-[20px] font-medium text-[#FFFFFF] pt-3"
+          className=" w-full text-[15px] sm:text-[17px] md:text-[20px] font-medium text-[#FFFFFF] pt-3 md:w-150 xl:w-190 text-center mx-auto"
           variants={itemVariants}
         >
           Stop juggling courier portals, chasing refunds, and losing revenue to
@@ -47,7 +48,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-3.5 mt-12"
+          className="flex flex-col sm:flex-row justify-center items-center gap-3.5 mt-0 md:mt-12"
           variants={itemVariants}
         >
           <Button

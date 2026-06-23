@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
 export default function Header() {
   const navItems = [
     { id: 1, text: "home", path: "/" },
@@ -14,6 +15,14 @@ export default function Header() {
   ];
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // ← added
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavigation = () => {
     router.push("/");
@@ -25,7 +34,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed left-1/2 -translate-x-1/2 w-[90%] xl:w-[90%] xl:max-w-7xl top-5 bg-[#161326] rounded-[10px] h-19 flex justify-between items-center shadow py-4 px-4 z-50">
+      <header
+        className={`fixed left-1/2 -translate-x-1/2 w-[90%] xl:w-[90%] xl:max-w-7xl top-5 rounded-[10px] h-19 flex justify-between items-center  py-4 px-4 z-50 transition-colors duration-300
+          ${scrolled ? "bg-[#161326]/75 backdrop-blur-md" : "bg-transparent"}`}
+      >
         {" "}
         <section>
           <Image
@@ -62,12 +74,6 @@ export default function Header() {
             color="white"
             content={"Get a Free Demo"}
           />
-          {/* <button class="group relative h-12 overflow-hidden overflow-x-hidden rounded-md bg-neutral-950 px-8 py-2 text-neutral-50">
-            <span class="relative z-10">Hover Me</span>
-            <span class="absolute inset-0 overflow-hidden rounded-md">
-              <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-blue-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
-            </span>
-          </button> */}
         </section>
         {/* mobile menu icon, only visible below lg */}
         <section className="block lg:hidden ">

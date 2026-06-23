@@ -44,7 +44,7 @@ const slideInRight = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 1 },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 },
   },
 };
 
@@ -81,7 +81,7 @@ function AnimatedHeading() {
 export default function PrimaryBanner() {
   return (
     <>
-      <section className="w-full h-auto md:h-141 bg-[#161326] py-12 md:py-0">
+      <section className="w-full h-auto md:h-141 bg-[#161326] py-12 md:py-0 overflow-x-hidden">
         <div className="w-[90%] md:w-[85%] max-w-310 ms-auto me-auto h-auto md:h-141 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
           <motion.div
             variants={containerVariants}
