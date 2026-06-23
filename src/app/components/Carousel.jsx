@@ -6,9 +6,9 @@ export default function Carousel() {
   const SLIDES = [];
   return (
     <>
-      <section className="bg-[#FAF9F6] py-16 px-6 sm:px-12 md:px-24 w-full">
+      <section className="bg-[#FAF9F6] py-16 px-6 sm:px-12 md:px-8 w-full">
         <div className="max-w-7xl mx-auto w-full flex flex-col justify-between">
-          <div className="max-w-4xl mb-12">
+          <div className="max-w-4xl mb-12 ">
             <p className="font-medium text-lg text-gray-600 tracking-wide uppercase mb-2">
               Case Studies
             </p>

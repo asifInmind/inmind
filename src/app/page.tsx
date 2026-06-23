@@ -127,20 +127,20 @@ export default function Home() {
       <Counters />
       <section className="w-full relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto lg:h-auto flex flex-col md:flex-row justify-start items-center gap-6 md:px-0 py-10 md:py-12">
-          <div className="w-[90%] mx-auto lg:ms-12 h-auto z-11">
+          <div className="w-[88%] lg:w-full mx-auto lg:ms-12 h-auto z-11">
             <div className="flex justify-start items-center gap-2">
               <p className="text-[14px] md:text-[15px] uppercase pb-6.5">
                 Why Brands Switch to InMind{" "}
               </p>
               <div className="w-25 h-0.5 bg-[#328476] mb-6.5 "></div>
             </div>
-            <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight lg:text-[45px]">
+            <h1 className="font-bold lg:w-full  text-[28px] sm:text-[38px] md:text-[40px] leading-tight lg:text-[45px]">
               Your ops team is drowning.
             </h1>
-            <h1 className="font-bold text-[28px] sm:text-[38px] md:text-[60px] leading-tight lg:text-[45px] md:mb-10 mb-6.5">
+            <h1 className="font-bold text-[28px] md:w-150 lg:w-full sm:text-[38px] md:text-[40px] leading-tight lg:text-[45px] md:mb-10 mb-6.5">
               Not because they're incompetent.
             </h1>
-            <p className="font-normal text-[15px] md:text-[20px] lg:w-186 xl:w-210 leading-6 md:leading-7.5 md:pt-0 ">
+            <p className="font-normal text-[15px] md:w-120 md:text-[20px] lg:w-186 xl:w-210 leading-6 md:leading-7.5 md:pt-0 ">
               Most ecommerce brands in Pakistan are running operations on a
               patchwork of courier portals, WhatsApp threads, Excel sheets, and
               gut feeling. Every day, money slips through the cracks — in

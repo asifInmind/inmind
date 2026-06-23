@@ -23,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[linear-gradient(to_bottom,#161326b3_50%,#16132680_20%),url('/images/heromobile.jpg')] md:bg-[linear-gradient(to_bottom,#161326b3_50%,#16132680_20%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-185 lg:h-185 bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
+    <section className="bg-[linear-gradient(to_bottom,#161326cc_50%,#16132699_30%),url('/images/heromobile.jpg')] md:bg-[linear-gradient(to_bottom,#161326cc_50%,#16132699_30%),url('/images/herobg.png')] w-full h-130 sm:h-150 md:h-185 lg:h-185 bg-center bg-cover bg-no-repeat flex justify-center items-center flex-col pb-4 px-4 sm:px-6 md:px-8 pt-20 sm:pt-0">
       {" "}
       <motion.div
         className="w-full xl:w-220  md:w-200  h-auto text-center "
@@ -39,7 +39,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className=" w-full text-[15px] sm:text-[17px] md:text-[20px] font-medium text-[#FFFFFF] pt-3 md:w-150 xl:w-190 text-center mx-auto"
+          className=" w-full text-[15px] sm:text-[17px] md:text-[20px] font-medium text-[#FFFFFF] py-3 md:w-150 xl:w-190 text-center mx-auto"
           variants={itemVariants}
         >
           Stop juggling courier portals, chasing refunds, and losing revenue to
@@ -83,7 +83,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p
-          className="font-medium text-[15px] sm:text-[16px] md:text-[18px] italic text-[#ffffff] mt-3"
+          className="font-medium text-[15px] sm:text-[16px] md:text-[18px] italic text-[#ffffff] mt-4 mb-12"
           variants={itemVariants}
         >
           Trusted by brands managing 5,000+ orders/day

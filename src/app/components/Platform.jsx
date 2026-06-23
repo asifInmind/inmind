@@ -24,7 +24,7 @@ export default function Platform() {
   };
 
   return (
-    <main className="bg-[#161326] py-22.25 px-5  relative">
+    <main className="bg-[#161326] py-22.25 px-5 lg:px-10 relative">
       {/* bg decoration */}
       <div className="absolute right-0 top-0">
         <Image
@@ -38,13 +38,13 @@ export default function Platform() {
 
       {/* heading */}
       <motion.section
-        className="w-full px-4 max-w-[1240px] mx-auto mb-16.5 lg:px-0"
+        className="w-full px-4 max-w-310 mx-auto mb-16.5 lg:px-0"
         {...motionProps}
       >
         <p className="font-medium text-[16px] md:text-[18px] leading-[100%] text-white">
           Platform
         </p>
-        <h1 className="font-bold text-[32px] sm:text-[42px] md:text-[60px] leading-tight md:leading-20 text-white">
+        <h1 className="font-bold text-[23px] sm:text-[42px] md:text-[60px] leading-tight md:leading-20 text-white">
           Everything your brand <br />
           needs to scale operations.
         </h1>
