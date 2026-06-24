@@ -82,7 +82,7 @@ const EmblaCarousel = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="flex backface-hidden touch-pan-y select-none -ml-4">
           {feedbackMessages.map((message) => (

@@ -41,9 +41,12 @@ export default function Platform() {
         className="w-full px-4 max-w-310 mx-auto mb-16.5 lg:px-0"
         {...motionProps}
       >
-        <p className="font-medium text-[16px] md:text-[18px] leading-[100%] text-white">
-          Platform
-        </p>
+        <div className="flex justify-start items-center gap-2">
+          <p className="text-[14px] md:text-[15px] text-white uppercase pb-6.5">
+            Platfroms{" "}
+          </p>
+          <div className="w-25 h-0.5 bg-[#328476] mb-6.5 "></div>
+        </div>
         <h1 className="font-bold text-[23px] sm:text-[42px] md:text-[60px] leading-tight md:leading-20 text-white">
           Everything your brand <br />
           needs to scale operations.
@@ -51,79 +54,62 @@ export default function Platform() {
       </motion.section>
 
       {/* all rows wrapper */}
-      <div className="w-full max-w-[1240px] mx-auto px-4 lg:px-0 flex flex-col gap-5">
-        {/* row 1 — mobile: 1col | md: 2col equal | lg+: 2:1 ratio */}
-        <div className="flex flex-col md:flex-row gap-5 items-stretch">
-          <motion.div
-            className="w-full md:flex-1 lg:flex-[2] z-1"
-            {...motionProps}
-          >
+      <div className="w-full max-w-310 mx-auto px-4 lg:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Row 1: card 1 spans 2 cols, card 2 spans 1 col */}
+          <motion.div className="md:col-span-2 z-1" {...motionProps}>
             <Card
               title="Attempt Management"
               description="Reduce returns before they happen with real-time delivery tracking and auto follow-ups."
             />
           </motion.div>
-          <motion.div
-            className="w-full md:flex-1 lg:flex-[1] z-1"
-            {...motionProps}
-          >
+          <motion.div className="md:col-span-1 z-1" {...motionProps}>
             <Card
               title="Unified Courier Portal"
               description="All couriers in one place — TCS, Leopards, Trax, Swyft, BlueEX."
             />
           </motion.div>
-        </div>
 
-        {/* row 2 — mobile: 1col | md: 2col | lg+: 3col */}
-        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-5 items-stretch">
-          <motion.div
-            className="w-full md:flex-[1_1_calc(50%-10px)] lg:flex-1 z-1"
-            {...motionProps}
-          >
+          {/* Row 2: 3 equal cards, each 1 col */}
+          <motion.div className="md:col-span-1 z-1" {...motionProps}>
             <Card
               title="Accounts Receivable"
               description="Know exactly what every courier owes you, down to the shipment level."
             />
           </motion.div>
-          <motion.div
-            className="w-full md:flex-[1_1_calc(50%-10px)] lg:flex-1 z-1"
-            {...motionProps}
-          >
+          <motion.div className="md:col-span-1 z-1" {...motionProps}>
             <Card
               title="WhatsApp Automation"
-              description="Order updates, attempt follow-ups, delivery alerts — fully automated."
+              description="Order updates, attempt follow-ups, delivery alerts "
             />
           </motion.div>
-          <motion.div
-            className="w-full md:flex-[1_1_100%] lg:flex-1 z-1"
-            {...motionProps}
-          >
+          <motion.div className="md:col-span-1 z-1" {...motionProps}>
             <Card
               title="AI Automations"
               description="Smart triggers and intelligent workflows without extra tools or subscriptions."
             />
           </motion.div>
-        </div>
 
-        {/* row 3 — mobile: 1col | md+: 2col equal */}
-        <div className="flex flex-col md:flex-row gap-5 items-stretch">
-          <motion.div className="w-full md:flex-1 z-1" {...motionProps}>
-            <Card
-              title="COD Reconciliation"
-              description="Never get underpaid by a courier again. Full remittance tracking."
-            />
-          </motion.div>
-          <motion.div className="w-full md:flex-1 z-1" {...motionProps}>
-            <Card
-              title="Analytics Dashboard"
-              description="Real-time ops visibility across orders, returns, couriers, and revenue."
-            />
-          </motion.div>
-        </div>
+          {/* Row 3: 2 equal cards, each 1.5 cols */}
+          {/* Row 3: 2 equal cards */}
+          {/* Row 3: 2 truly equal cards */}
+          <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <motion.div className="z-1" {...motionProps}>
+              <Card
+                title="COD Reconciliation"
+                description="Never get underpaid by a courier again. Full remittance tracking."
+              />
+            </motion.div>
+            <motion.div className="z-1" {...motionProps}>
+              <Card
+                title="Analytics Dashboard"
+                description="Real-time ops visibility across orders, returns, couriers, and revenue."
+              />
+            </motion.div>
+          </div>
 
-        {/* row 4 — always full width */}
-        <div className="flex">
-          <motion.div className="w-full z-1" {...motionProps}>
+          {/* Row 4: full width */}
+          <motion.div className="md:col-span-3 z-1" {...motionProps}>
             <Card
               title="Multi-Team Access"
               description="Roles and permissions for your entire operations team."

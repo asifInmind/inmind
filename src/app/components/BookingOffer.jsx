@@ -87,7 +87,7 @@ export default function BookingOffer() {
             whileInView="visible"
             viewport={{ once: false }}
             variants={headingVariants}
-            className="w-full max-w-310.5 h-auto font-bold text-[28px] sm:text-[40px] md:text-[40px] lg:text-[60px] mx-auto text-center leading-tight md:leading-20 text-[#ffffff] lg:w-235"
+            className="w-full max-w-310.5 h-auto font-bold text-[28px] sm:text-[40px] md:text-[40px] lg:text-[60px] mx-auto text-center leading-tight md:leading-20 text-[#ffffff] lg:w-240"
           >
             Your next{" "}
             <motion.span
@@ -106,7 +106,7 @@ export default function BookingOffer() {
             whileInView="visible"
             viewport={{ once: false }}
             variants={paragraphVariants}
-            className="w-full max-w-310.5 md:w-160 h-auto text-center text-[#fcfcfc]  mx-auto font-medium text-[15px] md:text-[18px] leading-[100%] mb-10 md:mb-11 mt-4 md:mt-11"
+            className="w-full max-w-310.5 md:w-160 lg:w-190 h-auto text-center text-[#fcfcfc]  mx-auto font-medium text-[15px] md:text-[18px] leading-[100%] mb-10 md:mb-11 mt-4 md:mt-11"
           >
             Less returns. Less manual work. Less money left on the table. That's
             what inMind is built for.
@@ -172,7 +172,7 @@ export default function BookingOffer() {
           </motion.div>
 
           <motion.div
-            className="absolute right-80 left-80 -bottom-90 opacity-30 z-0 pointer-events-none"
+            className="absolute left-1/2 -translate-x-1/2 -bottom-90 opacity-30 z-0 pointer-events-none"
             animate={{ rotate: [150, 210, 150] }}
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           >

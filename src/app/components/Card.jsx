@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Card({ title, description, imageSrc, brRadius }) {
+export default function Card({
+  title,
+  description,
+  imageSrc,
+  brRadius,
+  imgPadding = "p-10",
+}) {
   return (
     <div
       className="border border-[#4B4763] rounded-sm p-4 w-full flex flex-col h-auto bg-[#424242] sm:h-95 md:h-105 lg:h-122.25"
@@ -24,12 +30,9 @@ export default function Card({ title, description, imageSrc, brRadius }) {
           <Image
             src={imageSrc || "/images/Vector.png"}
             fill
-            //  sizes="300px"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            // width={200}
-            // height={100}
             alt={title}
-            className="object-contain p-20"
+            className={`object-contain ${imgPadding}`}
           />
         </div>
       </div>

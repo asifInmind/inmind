@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FeedbackCard({ message, image, title, address }) {
   return (
-    <section className="shadow bg-[#FFFFFF] p-7.5 w-full h-70.75 flex flex-col justify-between rounded-[14px]">
+    <section className="shadow bg-[#FFFFFF] p-7.5 w-full h-70.75 flex flex-col justify-between rounded-[14px] my-4">
       <div>
         <Image
           src="/icons/Group.svg"

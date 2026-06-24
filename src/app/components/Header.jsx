@@ -40,15 +40,17 @@ export default function Header() {
       >
         {" "}
         <section>
-          <Image
-            src={"/icons/logo.svg"}
-            alt="web logo"
-            width={50}
-            height={50}
-            className="w-27.25 h-6.5"
-            onClick={handleNavigation}
-            loading="eager"
-          />
+          {!isMenuOpen && (
+            <Image
+              src={"/icons/logo.svg"}
+              alt="web logo"
+              width={50}
+              height={50}
+              className="w-27.25 h-6.5"
+              onClick={handleNavigation}
+              loading="eager"
+            />
+          )}
         </section>
         <section className="hidden lg:block">
           <nav>
@@ -111,18 +113,17 @@ export default function Header() {
       {/* dark overlay behind the mobile menu */}
       <div
         onClick={() => setIsMenuOpen(false)}
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 bg-black/70 z-40 transition-opacity duration-300 lg:hidden ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       />
 
-      {/* mobile slide-in menu */}
       <div
-        className={`fixed top-0  left-0 h-full w-3/4 max-w-72 bg-[#161326] z-1001 transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 h-full w-3/4 max-w-[384px] bg-[#161326] z-1001 transform transition-transform duration-300 ease-in-out lg:hidden ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-4 pt-10">
           <Image
             src={"/icons/logo.svg"}
             alt="web logo"

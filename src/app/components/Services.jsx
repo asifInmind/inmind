@@ -9,6 +9,7 @@ export default function Services({
   imageSrc,
   btnBlur,
   reverse = false,
+  active = false,
 }) {
   const slideInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -22,14 +23,14 @@ export default function Services({
   };
   return (
     <>
-      <section className="w-full  lg:h-auto">
+      <section className="w-full mb-5 md:mb-0  lg:h-auto bg-[#FAF9F6]">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           variants={slideInUp}
           transition={transition}
-          className={`w-[90%] max-w-7xl flex flex-col xl:w-[95%]  mx-auto my-16  ${
+          className={`w-[90%] max-w-7xl flex flex-col md:pb-37.5 xl:w-[95%]  mx-auto  ${
             reverse
               ? "md:flex-col lg:flex-row-reverse"
               : "md:flex-col lg:flex-row"
@@ -45,10 +46,14 @@ export default function Services({
           </div>
           <div className="hidden md:hidden w-15 xl:block h-101.5   gap-1   mx-auto">
             {" "}
-            <p className="w-15 h-15 bg-black rounded-[30px] text-center text-[30px] font-bold text-white flex justify-center items-center">
+            <p
+              className={`w-15 h-15 ${active ? "bg-black" : "bg-[#909090]"} rounded-[30px] text-center text-[30px] font-bold text-white flex justify-center items-center`}
+            >
               {stepNumber}
             </p>
-            <div className="w-1 h-84.5 bg-black mx-auto"></div>
+            <div
+              className={`w-1 h-84.5 ${active ? "bg-black" : "bg-[#909090]"} mx-auto`}
+            ></div>
           </div>
           <div className="w-full md:w-175 h-auto md:ms-2 ">
             <span className="flex justify-center items-center uppercase w-fit h-7 bg-[#D9D9EF99] rounded-[100px]  p-5 text-[14px] md:text-[16px] font-normal">

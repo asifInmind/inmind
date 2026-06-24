@@ -17,7 +17,7 @@ export default function Carousel() {
             </h1>
           </div>
 
-          <div className="w-full">
+          <div className="w-full ">
             <EmblaCarousel slides={SLIDES} options={OPTIONS} />
           </div>
         </div>

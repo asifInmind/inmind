@@ -29,13 +29,16 @@ export default function SetupProcedure() {
 
   return (
     <>
-      <section className="bg-[#FAF9F6] h-auto relative w-full overflow-hidden">
+      <section className="bg-[#FAF9F6] h-auto relative w-full overflow-hidden md:mt-14">
         <div className="w-full max-w-310 ms-auto me-auto px-8 md:px-10 lg:px-0 py-16 md:py-20 lg:py-25">
           {/* Headings */}
           <div className="w-full max-w-257.5 h-auto relative md:ps-10">
-            <p className="text-[14px] md:text-[15px] uppercase tracking-wide">
-              process------
-            </p>
+            <div className="flex justify-start items-center gap-2">
+              <p className="text-[14px] md:text-[15px] uppercase pb-6.5">
+                Process{" "}
+              </p>
+              <div className="w-25 h-0.5 bg-[#328476] mb-6.5 "></div>
+            </div>
             <h1 className="font-bold text-[32px] sm:text-[42px] md:text-[60px] leading-tight">
               Set up in a day{" "}
             </h1>
@@ -45,7 +48,7 @@ export default function SetupProcedure() {
           </div>
 
           {/* Top Decorative Image */}
-          <div className="hidden md:block absolute right-0 top-0">
+          <div className="hidden md:block absolute right-0 top-0 ">
             <div className="relative">
               <Image
                 src="/images/Group 17.png"
